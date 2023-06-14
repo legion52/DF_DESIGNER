@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* background-color: #66C4ED; */
+  background-image: url(./assets/points.png);
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+}
+
+.graphs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* //flex justify-center items-center gap-[100px] */
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  z-index: 10;
+  width: 400px;
+  background-color: rgb(98, 231, 243);
+}
+
+h1 {
+  color: rgb(20, 182, 246)
+}
