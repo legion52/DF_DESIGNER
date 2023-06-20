@@ -23,6 +23,8 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
+  overflow-y: hidden;
+  overflow-x: auto;
 }
 
 /* //flex justify-center items-center gap-[100px] */

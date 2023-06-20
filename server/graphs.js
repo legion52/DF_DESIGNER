@@ -37,7 +37,9 @@ const graphs = [
       { fromId: 0, toId: 6 },
       { fromId: 1, toId: 3 },
       { fromId: 1, toId: 6 },
+      // { fromId: 1, toId: 3 },//
       { fromId: 5, toId: 4 },
+      // { fromId: 5, toId: 6 },//
       { fromId: 5, toId: 3 },
       { fromId: 6, toId: 2 },
       { fromId: 6, toId: 8 },

@@ -4,6 +4,7 @@ import { ListPanel } from "./components/list-panel/column";
 import { Graph } from "./models";
 import { Select } from "./components/select";
 import axios from "axios";
+import { unravelGraph } from "./hooks/unravelGraph";
 
 function App() {
   const [columns, setColumns] = useState<any>([]);
@@ -30,7 +31,8 @@ function App() {
           axios(`http://localhost:3001/api/graphs/${value}`).then(
             (res: any) => {
               setGraphs(res.data);
-              setColumns(transformCol(JSON.parse(JSON.stringify(res.data))));
+              setColumns(unravelGraph(res.data,transformCol(JSON.parse(JSON.stringify(res.data))), 4));//последний параметр - сколько раз нужно пройтись по графу
+              console.log(transformCol(JSON.parse(JSON.stringify(res.data))));
             }
           );
         // }

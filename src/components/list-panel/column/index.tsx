@@ -63,7 +63,8 @@ export const ListPanel: React.FC<IColumn> = ({ list, col, appRef }) => {
   );
 
   useEffect(() => {
-    setColumns(list.nodes.filter((el: any) => col.includes(el.id)));
+    console.log(col, list.nodes.filter((el: any) => col.includes(el.id)));
+    setColumns(list.nodes.filter((el: any) => col.includes(el.id)).sort((a, b) => col.indexOf(a.id) - col.indexOf(b.id)));
   }, []);
 
   const getCoordinates = () => {
@@ -103,13 +104,13 @@ export const ListPanel: React.FC<IColumn> = ({ list, col, appRef }) => {
         <div
           ref={(element) => handleElementRef(element, el.id)}
           id={el.id}
-          key={el.id + i}
+          key={el.id}
           onMouseDown={add}
           onMouseUp={remove}
           className={styles.node}
           style={{ userSelect: "none", top:`${i*200}px` }}
         >
-          {el.name}
+          {el.id}
         </div>
       ))}
       {edges &&
