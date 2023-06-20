@@ -4,13 +4,15 @@ interface Result {
   [key: number]: number[];
 }
 
+
+
 export const transformCol = (obj: Graph) => {
   let res: Result = {};
   let col = 1;
   const graph: Graph = JSON.parse(JSON.stringify(obj));
 
   const func = (obj: Graph) => {
-    if (obj.edges.length) {
+    if (obj.edges?.length) {
       obj.edges.forEach((el, i, arr) => {
         if (arr.map((el) => el.toId).indexOf(el.fromId) < 0) {
           res[col] ? res[col].push(el.fromId) : (res[col] = [el.fromId]);
@@ -31,5 +33,6 @@ export const transformCol = (obj: Graph) => {
   };
   func(obj);
   Object.keys(res).map((el: any) => (res[el] = [...new Set(res[el])]));
+  // console.log(Object.keys(res).map((el: any) => [...res[el]]));
   return Object.keys(res).map((el: any) => [...res[el]]);
 };
