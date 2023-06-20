@@ -32,7 +32,6 @@ function App() {
             (res: any) => {
               setGraphs(res.data);
               setColumns(unravelGraph(res.data,transformCol(JSON.parse(JSON.stringify(res.data))), 4));//последний параметр - сколько раз нужно пройтись по графу
-              console.log(transformCol(JSON.parse(JSON.stringify(res.data))));
             }
           );
         // }

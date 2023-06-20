@@ -63,7 +63,6 @@ export const ListPanel: React.FC<IColumn> = ({ list, col, appRef }) => {
   );
 
   useEffect(() => {
-    console.log(col, list.nodes.filter((el: any) => col.includes(el.id)));
     setColumns(list.nodes.filter((el: any) => col.includes(el.id)).sort((a, b) => col.indexOf(a.id) - col.indexOf(b.id)));
   }, []);
 
